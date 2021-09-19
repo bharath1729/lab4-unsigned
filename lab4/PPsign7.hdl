@@ -2,7 +2,7 @@ CHIP PPsign7
 {
     IN a[8], b ;
 
-    OUT pp;
+    OUT pp[16];
 
     PARTS:
 
