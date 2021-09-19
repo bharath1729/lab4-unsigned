@@ -2,14 +2,14 @@ CHIP PPsign7
 {
     IN a[8], b ;
 
-    OUT pp;
+    OUT pp[16];
 
     PARTS:
 
     And(a=a[0], b=b, out=temp7);
     And(a=a[1], b=b, out=temp8);
     And(a=a[2], b=b, out=temp9);
-    And(a=a[3], b=b, out=temp1]);
+    And(a=a[3], b=b, out=temp10);
     And(a=a[4], b=b, out=temp11);
     And(a=a[5], b=b, out=temp12);
     And(a=a[6], b=b, out=temp13);
@@ -39,6 +39,7 @@ CHIP PPsign7
     Xor(a=temp12, b=b, out=x12);
     Xor(a=temp13, b=b, out=x13);
     Xor(a=temp14, b=b, out=x14);
+    Xor(a=temp15, b=b, out=x15);
     
     HalfAdder(a=x0, b=b, sum=pp[0], carry=c1);
     HalfAdder(a=x1, b=b, sum=pp[1], carry=c2);
