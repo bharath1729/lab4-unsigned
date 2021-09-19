@@ -32,7 +32,16 @@ CHIP Wtreesigned
 
     cla(x=c40 , y=s40 , as=false , s= out0);
 
-    cutter(a=out0 , b= out , ofTemp=of ) ;
+    cutter(a=out0 , b= out , ofTemp=x1 ) ;
+    sumOFnot(a=out0 , out=x2);
+
+    Xor(a=a[7], b=b[7], out=p);
+    Not(in=p, out=p1);
+
+    And(a=p1, b=x1, out=k);
+    And(a=p, b=x2, out=k1);
+
+    Or(a=k, b=k1, out=of);
 
     
     
